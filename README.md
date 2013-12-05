@@ -2,6 +2,10 @@
 
 This extension creates a template that can be inserted on any category page as a static block. It will then display this category's direct child categories. The markup is copied mostly from the default product grid, so most styles should be inherited from the product grid styles.
 
+Here's an example of a category page using the subcategory grid:
+
+![Example using a sample data category](http://i.imgur.com/RODPyKO.jpg)
+
 ## Installation
 
 Download & install using [colinmollenhour/modman](https://github.com/colinmollenhour/modman/). Or directly via git, using [jreinke/modgit](https://github.com/jreinke/modgit).

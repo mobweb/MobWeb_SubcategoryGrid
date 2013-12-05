@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config> 
+    <modules>
+        <MobWeb_SubcategoryGrid>
+            <version>0.0.1</version>
+        </MobWeb_SubcategoryGrid>
+    </modules>
+    <global>
+        <blocks>
+            <mobweb_subcategorygrid>
+                <class>MobWeb_SubcategoryGrid_Block</class>
+            </mobweb_subcategorygrid>
+        </blocks>
+    </global>
+</config>

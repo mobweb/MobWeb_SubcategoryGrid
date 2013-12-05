@@ -1,0 +1,9 @@
+app/code/local/MobWeb/SubcategoryGrid app/code/local/MobWeb/SubcategoryGrid/
+
+app/etc/modules/MobWeb_SubcategoryGrid.xml 
+app/etc/modules/MobWeb_SubcategoryGrid.xml
+
+app/design/frontend/base/default/template/mobweb_subcategorygrid/ app/design/frontend/base/default/template/mobweb_subcategorygrid/
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"

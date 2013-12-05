@@ -1,0 +1,36 @@
+<?php // We are using the default product grid markup here to hopefully inherit styling from the default styles ?>
+<div class="category-products">
+	<ul class="products-grid">
+		<?php
+		$_categories = $this->getCurrentChildCategoriesForGrid();
+		if($_categories->count()) {
+			$numCols = 3;
+			$i = 0;
+			foreach($_categories AS $_category) {
+				if($_category->getIsActive()) {
+					$currentCategory = Mage::getModel('catalog/category')->load($_category->getId());
+					$layer = Mage::getSingleton('catalog/layer');
+					$layer->setCurrentCategory($currentCategory);
+					$catName = $this->getCurrentCategory()->getName();
+					$class = '';
+					if($i%$numCols === $numCols-1) {
+						$class = "last";
+					} else if($i%$numCols === 0) {
+						$class = "first";
+					} ?>
+					<li class="item <?php echo $class ?>">
+						<a href="<?php echo $_category->getURL() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>" class="product-image"><img src="<?php echo Mage::getBaseUrl('media') . 'catalog/category/' . $_category->load($_category->getId())->getThumbnail() ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>" style="width:100%;height:auto" /></a>
+						<h2 class="product-name">
+							<a href="<?php echo $_category->getURL() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a>
+						</h2>
+					</li>
+					<?php
+					if($i%$numCols === $numCols-1) {
+						echo "</ul><ul class='products-grid'>";
+					}
+					$i++;
+				}
+			}
+		} ?>
+	</ul>
+</div>
